@@ -1,0 +1,392 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCRE AI - Domine a Nova Economia com Inteligência Artificial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;family=Poppins:wght@300;400;500;600;700&amp;family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --neon-green: #00FF88;
+            --dark-bg: #000000;
+            --text-light: #E0E0E0;
+            --text-white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+        
+        .orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .rajdhani {
+            font-family: 'Rajdhani', sans-serif;
+        }
+        
+        .neon-text {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5), 
+                         0 0 10px rgba(0, 255, 136, 0.3), 
+                         0 0 15px rgba(0, 255, 136, 0.2);
+        }
+        
+        .neon-button {
+            background-color: var(--neon-green);
+            color: var(--dark-bg);
+            font-weight: 700;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5),
+                        0 0 20px rgba(0, 255, 136, 0.3);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .neon-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.7),
+                        0 0 30px rgba(0, 255, 136, 0.4),
+                        0 0 45px rgba(0, 255, 136, 0.2);
+        }
+        
+        .neon-button:active {
+            transform: translateY(1px);
+        }
+        
+        .glass-effect {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 255, 136, 0.1);
+        }
+        
+        .neural-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%2300FF88' stroke-width='1' stroke-opacity='0.15'%3E%3Cpath d='M400 100 L100 300 L100 500 L400 700 L700 500 L700 300 Z'/%3E%3Cpath d='M400 100 L400 300 L100 500 L400 700'/%3E%3Cpath d='M400 100 L400 300 L700 500 L400 700'/%3E%3Cpath d='M100 300 L400 500 L700 300'/%3E%3Cpath d='M100 500 L400 500 L700 500'/%3E%3Ccircle cx='100' cy='300' r='10'/%3E%3Ccircle cx='100' cy='500' r='10'/%3E%3Ccircle cx='400' cy='100' r='10'/%3E%3Ccircle cx='400' cy='300' r='10'/%3E%3Ccircle cx='400' cy='500' r='10'/%3E%3Ccircle cx='400' cy='700' r='10'/%3E%3Ccircle cx='700' cy='300' r='10'/%3E%3Ccircle cx='700' cy='500' r='10'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .visible {
+            opacity: 1;
+            transform: translate(0);
+        }
+        
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: normal;
+            margin: 0 auto;
+            letter-spacing: 0.15em;
+            opacity: 0;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 5px rgba(0, 255, 136, 0.5), 
+                             0 0 10px rgba(0, 255, 136, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(0, 255, 136, 0.8), 
+                             0 0 20px rgba(0, 255, 136, 0.5),
+                             0 0 30px rgba(0, 255, 136, 0.3);
+            }
+            100% {
+                text-shadow: 0 0 5px rgba(0, 255, 136, 0.5), 
+                             0 0 10px rgba(0, 255, 136, 0.3);
+            }
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .video-overlay:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .play-icon {
+            font-size: 4rem;
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-overlay:hover .play-icon {
+            transform: scale(1.2);
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.visible{visibility:visible}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-full{height:100%}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.gap-8{gap:2rem}.overflow-hidden{overflow:hidden}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border-t{border-top-width:1px}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-black{--tw-gradient-from:#000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-black{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #000 var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-\[\#001a0d\]{--tw-gradient-to:#001a0d var(--tw-gradient-to-position)}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-8{padding-top:2rem;padding-bottom:2rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-20{opacity:0.2}.opacity-30{opacity:0.3}.opacity-90{opacity:0.9}@media (min-width: 640px){.sm\:block{display:block}}@media (min-width: 768px){.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:py-16{padding-top:4rem;padding-bottom:4rem}.md\:py-20{padding-top:5rem;padding-bottom:5rem}.md\:py-24{padding-top:6rem;padding-bottom:6rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-7xl{font-size:4.5rem;line-height:1}}</style></head>
+<body>
+    <!-- TOPO / LOGO -->
+    <header class="relative w-full py-16 overflow-hidden">
+        <div class="neural-bg"></div>
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center items-baseline"> <!-- Alterado para items-baseline -->
+                <h1 class="orbitron text-5xl md:text-7xl font-bold neon-text pulse mb-4">LUCRE AI</h1>
+                <img src="./Free.png" alt="Logo" class="h-10 md:h-14 ml-8 self-center transform translate-y-[-5px]"> 
+                <!-- Adicionado self-center e transform translate-y -->
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-12 md:py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 id="typewriter" class="orbitron text-3xl md:text-5xl font-bold neon-text mb-6 typewriter-text" style="opacity: 1;">DOMINE A NOVA ECONOMIA COM INTELIGÊNCIA ARTIFICIAL</h2>
+                <p class="text-xl md:text-2xl mb-10 fade-in visible">
+                    Aprenda a gerar renda diária na internet usando ferramentas de IA que trabalham por você — mesmo começando do zero
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE VÍDEO/VSL -->
+    <section class="py-12 md:py-16 bg-black">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-xl border border-white/20 relative">
+
+        <!-- Video container -->
+        <div class="relative aspect-video w-full">
+            <iframe 
+            id="video-iframe"
+            class="absolute inset-0 w-full h-full rounded-t-xl"
+            src="https://www.youtube.com/embed/VbH0dsKuReE"
+            title="Lucre AI VSL"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+            </iframe>
+
+            <!-- Play Overlay (optional if not auto-play) -->
+            <div id="video-overlay" class="absolute inset-0 bg-black/50 flex items-center justify-center pointer-events-none">
+            <!-- <div class="text-white text-5xl font-bold opacity-60">▶</div> -->
+            </div>
+        </div>
+
+        <!-- CTA Text below video -->
+        <div class="p-6 text-center text-white">
+            <p class="text-lg md:text-xl font-medium">
+            Assista até o final e descubra como transformar conhecimento em dinheiro, com a tecnologia ao seu lado 24h por dia.
+            </p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- BOTÃO DE CTA PRINCIPAL -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto fade-in">
+                <a href="https://pay.kirvano.com/09d1c7fc-bdec-4f88-b644-52c69cc9b40b" class="neon-button w-full py-5 px-6 text-xl md:text-2xl orbitron rounded-lg block">
+                    QUERO LUCRAR COM IA AGORA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCO DE IMPACTO -->
+    <section class="py-16 md:py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-black via-black to-[#001a0d] opacity-90"></div>
+        <div class="neural-bg opacity-30"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl md:text-4xl font-bold text-white mb-6 slide-in-left">
+                    A revolução já começou. A pergunta é: você vai liderar ou assistir de longe?
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCO COM BENEFÍCIOS DO EBOOK -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass-effect p-8 rounded-xl text-center fade-in">
+                    <div class="benefit-icon">🧠</div>
+                    <h4 class="orbitron text-xl font-bold mb-4 text-white">Aprenda a usar IAs que automatizam dinheiro</h4>
+                    <p>Descubra como configurar sistemas de IA que trabalham para você 24 horas por dia, gerando resultados consistentes.</p>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-xl text-center fade-in">
+                    <div class="benefit-icon">⚙️</div>
+                    <h4 class="orbitron text-xl font-bold mb-4 text-white">Estratégias práticas, diretas e comprovadas</h4>
+                    <p>Sem enrolação ou teoria desnecessária. Apenas métodos testados e validados para começar a lucrar rapidamente.</p>
+                </div>
+                
+                <div class="glass-effect p-8 rounded-xl text-center fade-in">
+                    <div class="benefit-icon">💸</div>
+                    <h4 class="orbitron text-xl font-bold mb-4 text-white">Monetize 24h/dia sem depender de ninguém</h4>
+                    <p>Crie fontes de renda automatizadas que funcionam enquanto você dorme, viaja ou aproveita seu tempo livre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO FINAL COM PROVOCAÇÃO -->
+    <section class="py-16 md:py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-black to-[#001a0d] opacity-90"></div>
+        <div class="neural-bg opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl md:text-4xl font-bold text-white mb-10 slide-in-right">
+                    Você vai continuar assistindo outras pessoas mudarem de vida com IA enquanto você só vê acontecer?
+                </h3>
+                <div class="max-w-2xl mx-auto">
+                    <a href="https://pay.kirvano.com/09d1c7fc-bdec-4f88-b644-52c69cc9b40b" class="neon-button w-full py-5 px-6 text-xl md:text-2xl orbitron rounded-lg block">
+                        COMEÇAR AGORA COM LUCRE AI
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="py-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <p class="text-center text-sm text-gray-500">
+                Todos os direitos reservados | Lucre AI © 2025
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer para animações de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Configuração do vídeo
+            const videoOverlay = document.getElementById('video-overlay');
+            const videoPlaceholder = document.getElementById('video-placeholder');
+            
+            if (videoOverlay && videoPlaceholder) {
+                videoOverlay.addEventListener('click', function() {
+                    // Substitua a URL abaixo pelo link do seu vídeo
+                    const videoUrl = "https://www.youtube.com/embed/SEU_ID_DO_VIDEO?autoplay=1";
+                    
+                    // Cria o iframe do vídeo
+                    const iframe = document.createElement('iframe');
+                    iframe.setAttribute('src', videoUrl);
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allowfullscreen', 'true');
+                    iframe.setAttribute('width', '100%');
+                    iframe.setAttribute('height', '100%');
+                    iframe.style.position = 'absolute';
+                    iframe.style.top = '0';
+                    iframe.style.left = '0';
+                    
+                    // Substitui o placeholder pelo iframe
+                    videoPlaceholder.parentNode.replaceChild(iframe, videoPlaceholder);
+                    
+                    // Esconde o overlay
+                    this.style.display = 'none';
+                });
+            }
+            
+            // Efeito de máquina de escrever para o título principal
+            function typeWriter(element, text, i = 0) {
+                if (i === 0) {
+                    element.innerHTML = '';
+                    element.style.opacity = '1';
+                }
+                
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(() => typeWriter(element, text, i), 50); // Velocidade da digitação
+                }
+            }
+            
+            const typewriterElement = document.getElementById('typewriter');
+            if (typewriterElement) {
+                const text = typewriterElement.textContent.trim();
+                setTimeout(() => {
+                    typeWriter(typewriterElement, text);
+                }, 500);
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9516c1fd13d90195',t:'MTc1MDIwNzQ2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
+
+<a href="https://pay.kirvano.com/09d1c7fc-bdec-4f88-b644-52c69cc9b40b" class="neon-button...">
+</a></body></html>
